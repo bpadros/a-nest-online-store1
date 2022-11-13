@@ -1,12 +1,42 @@
 {{#> app}}
   {{#*inline "content"}}
+
+
+  <style>
+    .btn-name {
+text-decoration: none;
+color: black;
+font-weight: 700;
+}
+
+.card img{
+transition: 1s ease;
+}
+.card img:hover {
+-webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+transition: 1s ease;
+}
+
+.title-product{
+  text-align: center;
+  font-weight: 700;
+}
+  </style>
+
+
     <div class="row">
+      <h2 class="title-product">JEANS</h2>
       {{#each viewData.products}}
       <div class="col-md-4 col-lg-3 mb-2">
-        <div class="card">
-          <img src="/uploads/{{getImage}}" class="card-img-top img-card">
+        
+        <div class="card bg-light">
+          {{!-- <img src="/uploads/{{getImage}}" class="card-img-top img-card"> --}}
+          
           <div class="card-body text-center">
-            <a href="/products/{{getId}}" class="btn bg-primary text-white">{{getName}}</a>
+            {{!-- <a href="/products/{{getId}}" class="btn bg-primary text-dark">{{getName}}</a> --}}
+            <a href="/products/{{getId}}" class="btn-name"> <img src="/uploads/{{getImage}}" class="img-fluid rounded-start">{{getName}}</a>
           </div>
         </div>
       </div>

@@ -7,39 +7,57 @@
   <link href="/css/app.css" rel="stylesheet" />
   <title>{{#if viewData.title}}{{ viewData.title }}{{else}}Online Store{{/if}}</title>
 </head>
-<body>
+<body class="bg-light">
   <!-- header -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
+  {{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4"> --}}
+    <style>
+      a:hover {
+       
+       font-size: larger;
+
+       
+      }
+      .navbar-toggler-icon{
+
+filter: invert(100%);
+      }
+      
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light py-4">
+    
     <div class="container">
-      <a class="navbar-brand" href="/">Online Store</a>
+      <a class="navbar-brand text-dark" href="/">Online clothes Store</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+    
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link active" href="/">Home</a>
-          <a class="nav-link active" href="/products">Products</a>
-          <a href="/cart" class="nav-link active">Cart</a>
-          <a class="nav-link active" href="/about">About</a>
-          <div class="vr bg-white mx-2 d-none d-lg-block"></div>
+        <div class="navbar-nav ms-auto text-dark">
+          <a class="nav-link active text-dark" href="/">Home</a>
+          <a class="nav-link active text-dark" href="/products">Products</a>
+          <a href="/cart" class="nav-link active text-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+</svg>Cart</a>
+          <a class="nav-link active text-dark" href="/about">About</a>
+          <div class="vr bg-white mx-2 d-none d-lg-block text-dark"></div>
           {{#if session.user}}
-          <a href="/account/orders" class="nav-link active">My orders</a>
-          <a href="/auth/logout" class="nav-link active">Logout({{session.user.name}})</a>
+          <a href="/account/orders" class="nav-link active text-dark">My orders</a>
+          <a href="/auth/logout" class="nav-link active text-dark">Logout({{session.user.name}})</a>
           {{else}}
-          <a href="/auth/login" class="nav-link active">Login</a>
-          <a href="/auth/register" class="nav-link active">Register</a>
+          <a href="/auth/login" class="nav-link active text-dark">Login</a>
+          <a href="/auth/register" class="nav-link active text-dark">Register</a>
           {{/if}}
         </div>
       </div>
     </div>
   </nav>
 
-  <header class="masthead bg-primary text-white text-center py-4">
+  {{!-- <header class="masthead bg-primary text-white text-center py-4">
     <div class="container d-flex align-items-center flex-column">
       <h2>{{#if viewData.subtitle}}{{ viewData.subtitle }}{{else}}A Nest Online Store{{/if}}</h2>
     </div>
-  </header>
+  </header> --}}
   <!-- header -->
 
   <div class="container my-4">
