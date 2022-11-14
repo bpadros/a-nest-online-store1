@@ -11,29 +11,42 @@
   <!-- header -->
   {{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4"> --}}
     <style>
-      a:hover {
-       
-       font-size: larger;
-
-       
+     .navbar-nav a:hover {       
+       text-decoration: underline;      
       }
       .navbar-toggler-icon{
+      filter: invert(100%);
+      }
 
-filter: invert(100%);
+      .login {
+        border: 1px solid black;
+        border-radius: 15px;  
+        color:black;    
+      }   
+      .register {
+        background-color: black;
+         border-radius: 15px;
+         margin-left: 10px;
+         color: white;
+      }
+      .logo{
+        font-size: 40px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 800;
       }
       
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-light py-4">
     
     <div class="container">
-      <a class="navbar-brand text-dark" href="/">Online clothes Store</a>
+      <a class="navbar-brand text-danger logo" href="/">THE-STORE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto text-dark">
+        <div class="navbar-nav ms-auto">
           <a class="nav-link active text-dark" href="/">Home</a>
           <a class="nav-link active text-dark" href="/products">Products</a>
           <a href="/cart" class="nav-link active text-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
@@ -45,8 +58,8 @@ filter: invert(100%);
           <a href="/account/orders" class="nav-link active text-dark">My orders</a>
           <a href="/auth/logout" class="nav-link active text-dark">Logout({{session.user.name}})</a>
           {{else}}
-          <a href="/auth/login" class="nav-link active text-dark">Login</a>
-          <a href="/auth/register" class="nav-link active text-dark">Register</a>
+          <a href="/auth/login" class="nav-link active text-black login">Login</a>
+          <a href="/auth/register" class="nav-link active  register">Register</a>
           {{/if}}
         </div>
       </div>
